@@ -18,10 +18,10 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 
 
 ?>
-			<div class="box box-primary box-solid">
-				<div class="box-header with-border">
-					<h3 class="box-title">TRANSAKSI BARANG MASUK (SUDAH TERMASUK PAJAK) -> <a href="https://youtu.be/SFd8rh0pKec" target="_blanks">TONTON VIDEO</a></h3>
-					<div class="box-tools pull-right">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">TRANSAKSI BARANG MASUK (SUDAH TERMASUK PAJAK) -> <a href="https://youtu.be/SFd8rh0pKec" target="_blanks">TONTON VIDEO</a></h3>
+					<div class="float-end">
 						<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 					</div><!-- /.box-tools -->
 				</div>
@@ -186,10 +186,10 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 			$tglharini = date('Y-m-d');
 
 			echo "
-		  <div class='box box-primary box-solid'>
-				<div class='box-header with-border'>
-					<h3 class='box-title'>TAMBAH TRANSAKSI BARANG MASUK</h3>
-					<div class='box-tools pull-right'>
+		  <div class='card'>
+				<div class='card-header'>
+					<h3 class='card-title'>TAMBAH TRANSAKSI BARANG MASUK</h3>
+					<div class='float-end'>
 						<button class='btn btn-box-tool' data-widget='collapse'><i class='fa fa-minus'></i></button>
                     </div><!-- /.box-tools -->
 				</div>
@@ -205,45 +205,45 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 							 
 						<div class='col-lg-6'>
 
-							  <div class='form-group'>
+							  <div class='row mb-3'>
 							  
-									<label class='col-sm-4 control-label'>Tanggal</label>
+									<label class='col-sm-4 col-form-label'>Tanggal</label>
 										<div class='col-sm-6'>
 											<div class='input-group date'>
-												<div class='input-group-addon'>
-													<span class='glyphicon glyphicon-th'></span>
-												</div>
+												<span class='input-group-text'>
+													<i class='fa fa-calendar'></i>
+												</span>
 													<input type='text' class='datepicker' name='tgl_trbmasuk' id='tgl_trbmasuk' required='required' value='$tglharini' autocomplete='off'>
 											</div>
 										</div>
 										
-									<label class='col-sm-4 control-label'>Kode Transaksi</label>        		
+									<label class='col-sm-4 col-form-label'>Kode Transaksi</label>        		
 										<div class='col-sm-6'>
 											<input type=text name='kd_hid' id='kd_hid' class='form-control' required='required' value='$kdtransaksi' autocomplete='off' Disabled>
 										</div>
 										
-									<label class='col-sm-4 control-label'>Supplier</label>        		
+									<label class='col-sm-4 col-form-label'>Supplier</label>        		
 										<div class='col-sm-6'>
 											<div class='input-group'>
 												<input type='text' class='form-control' name='nm_supplier' id='nm_supplier' required='required' autocomplete='off' Disabled>
-													<div class='input-group-addon'>
-														<button type=button data-toggle='modal' data-target='#ModalSupplier' href='#'><span class='glyphicon glyphicon-search'></span></button>
-													</div>
+													<span class='input-group-text'>
+														<button type=button data-toggle='modal' data-target='#ModalSupplier' href='#' class='btn btn-sm btn-primary'><i class='fa fa-search'></i></button>
+													</span>
 											</div>
 										</div>
 									
-									<label class='col-sm-4 control-label'>Telepon</label>        		
+									<label class='col-sm-4 col-form-label'>Telepon</label>        		
 										<div class='col-sm-6'>
 											<input type=text name='tlp_supplier' id='tlp_supplier' class='form-control' autocomplete='off'>
 										</div>
 										
-									<label class='col-sm-4 control-label'>Alamat</label>        		
+									<label class='col-sm-4 col-form-label'>Alamat</label>        		
 										<div class='col-sm-6'>
 											<textarea name='alamat_supplier' id='alamat_supplier' class='form-control' rows='2'></textarea>
 										</div>
 							
                             
-									<label class='col-sm-4 control-label'>No Faktur</label>        		
+									<label class='col-sm-4 col-form-label'>No Faktur</label>        		
 										<div class='col-sm-6'>
 											<textarea name='ket_trbmasuk' id='ket_trbmasuk' class='form-control' rows='2'>  </textarea>
 											</p>
@@ -265,72 +265,72 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 								<input type=hidden name='id_barang' id='id_barang'>
 								<input type=hidden name='stok_barang' id='stok_barang'>
 								
-								<div class='form-group'>
+								<div class='row mb-3'>
 								
 									
-									<label class='col-sm-4 control-label'>Kode Barang</label>        		
+									<label class='col-sm-4 col-form-label'>Kode Barang</label>        		
 										<div class='col-sm-7'>
 											<div class='input-group'>
 												<input type='text' class='form-control' name='kd_barang' id='kd_barang' autocomplete='off'>
-													<div class='input-group-addon'>
-														<button type=button data-toggle='modal' data-target='#ModalItem' href='#' id='kode'><span class='glyphicon glyphicon-search'></span></button>
-													</div>
+													<span class='input-group-text'>
+														<button type=button data-toggle='modal' data-target='#ModalItem' href='#' id='kode' class='btn btn-sm btn-primary'><i class='fa fa-search'></i></button>
+													</span>
 											</div>
 										</div>
 									
-									<label class='col-sm-4 control-label'>Nama Barang</label>        		
+									<label class='col-sm-4 col-form-label'>Nama Barang</label>        		
 										<div class='col-sm-7'>
-											<div class='btn-group btn-group-justified' role='group' aria-label='...'>
+											<div class='d-flex w-100' role='group' aria-label='...'>
                                                 <div class='btn-group' role='group'>
 											        <input type=text name='nmbrg_dtrbmasuk' id='nmbrg_dtrbmasuk' class='typeahead form-control' autocomplete='off'>
                                                     
                                                 </div>
                                                 <div class='btn-group' role='group'>
-                                                    <button type='button' class='btn btn-primary' id='nmbrg_dtrbmasuk_enter'>Enter</button>
+                                                    <button type='button' class='btn btn-primary' id='nmbrg_dtrbmasuk_enter'><i class='fa fa-check'></i></button>
                                                 </div>
                                             </div>
 										</div>
 										
-									<label class='col-sm-4 control-label'>Qty</label>        		
+									<label class='col-sm-4 col-form-label'>Qty</label>        		
 										<div class='col-sm-7'>
 											<input type='number' name='qty_dtrbmasuk' id='qty_dtrbmasuk' class='form-control' autocomplete='off'>
 										</div>
 										
-									<label class='col-sm-4 control-label'>Satuan</label>        		
+									<label class='col-sm-4 col-form-label'>Satuan</label>        		
 										<div class='col-sm-7'>
 											<input type=text name='sat_dtrbmasuk' id='sat_dtrbmasuk' class='form-control' autocomplete='off'>
 										</div>
 
-									<label class='col-sm-4 control-label'>Harga Beli</label>        		
+									<label class='col-sm-4 col-form-label'>Harga Beli</label>        		
 										<div class='col-sm-7'>
 											<input type=text name='hrgsat_dtrbmasuk' id='hrgsat_dtrbmasuk' class='form-control' autocomplete='off'>
 										</div>
 										
-									<label class='col-sm-4 control-label'>Harga Jual Reguler</label>        		
+									<label class='col-sm-4 col-form-label'>Harga Jual Reguler</label>        		
 										<div class='col-sm-7'>
 											<input type=text name='hrgjual_dtrbmasuk' id='hrgjual_dtrbmasuk' class='form-control' autocomplete='off'>
 											
 										</div>
 									
-									<label class='col-sm-4 control-label'>Harga Jual Resep</label>        		
+									<label class='col-sm-4 col-form-label'>Harga Jual Resep</label>        		
 										<div class='col-sm-7'>
 											<input type=text name='hrgjual_dtrbmasuk_resep' id='hrgjual_dtrbmasuk_resep' class='form-control' autocomplete='off'>
 											
 										</div>
 									
-									<label class='col-sm-4 control-label'>Harga Jual Nakes</label>        		
+									<label class='col-sm-4 col-form-label'>Harga Jual Nakes</label>        		
 										<div class='col-sm-7'>
 											<input type=text name='hrgjual_dtrbmasuk_nakes' id='hrgjual_dtrbmasuk_nakes' class='form-control' autocomplete='off'>
 											
 										</div>
 									
-									<label class='col-sm-4 control-label'>No. Batch</label>        		
+									<label class='col-sm-4 col-form-label'>No. Batch</label>        		
 										<div class='col-sm-7'>
 											<input type='text' name='no_batch' id='no_batch' class='form-control' autocomplete='off'>
 											
 										</div>
 									
-									<label class='col-sm-4 control-label'>Exp. Date</label>        		
+									<label class='col-sm-4 col-form-label'>Exp. Date</label>        		
 										<div class='col-sm-7'>
 											<input type='text' class='datepicker' name='exp_date' id='exp_date' required='required' autocomplete='off'>
 											</p>
@@ -373,10 +373,10 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 			$diskon1 = format_rupiah($diskon);
 
 			echo "
-		  <div class='box box-primary box-solid'>
-				<div class='box-header with-border'>
-					<h3 class='box-title'>REVIEW TRANSAKSI BARANG MASUK</h3>
-					<div class='box-tools pull-right'>
+		  <div class='card'>
+				<div class='card-header'>
+					<h3 class='card-title'>REVIEW TRANSAKSI BARANG MASUK</h3>
+					<div class='float-end'>
 						<button class='btn btn-box-tool' data-widget='collapse'><i class='fa fa-minus'></i></button>
                     </div><!-- /.box-tools -->
 				</div>
@@ -392,44 +392,44 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 							 
 						<div class='col-lg-6'>
 						
-							<div class='form-group'>
+							<div class='row mb-3'>
 							  
-								<label class='col-sm-4 control-label'>Tanggal</label>
+								<label class='col-sm-4 col-form-label'>Tanggal</label>
 										<div class='col-sm-6'>
 											<div class='input-group date'>
-												<div class='input-group-addon'>
-													<span class='glyphicon glyphicon-th'></span>
-												</div>
+												<span class='input-group-text'>
+													<i class='fa fa-calendar'></i>
+												</span>
 													<input type='text' class='datepicker' name='tgl_trbmasuk' id='tgl_trbmasuk' required='required' value='$re[tgl_trbmasuk]' autocomplete='off'>
 											</div>
 										</div>
 										
-									<label class='col-sm-4 control-label'>Kode Transaksi</label>        		
+									<label class='col-sm-4 col-form-label'>Kode Transaksi</label>        		
 										<div class='col-sm-6'>
 											<input type=text name='kd_hid' id='kd_hid' class='form-control' required='required' value='$re[kd_trbmasuk]' autocomplete='off' Disabled>
 										</div>
 										
-									<label class='col-sm-4 control-label'>Supplier</label>        		
+									<label class='col-sm-4 col-form-label'>Supplier</label>        		
 										<div class='col-sm-6'>
 											<div class='input-group'>
 												<input type='text' class='form-control' name='nm_supplier' id='nm_supplier' required='required' value='$re[nm_supplier]' autocomplete='off' Disabled>
-													<div class='input-group-addon'>
-														<button type=button data-toggle='modal' data-target='#ModalSupplier' href='#'><span class='glyphicon glyphicon-search'></span></button>
-													</div>
+													<span class='input-group-text'>
+														<button type=button data-toggle='modal' data-target='#ModalSupplier' href='#' class='btn btn-sm btn-primary'><i class='fa fa-search'></i></button>
+													</span>
 											</div>
 										</div>
 									
-									<label class='col-sm-4 control-label'>Telepon</label>        		
+									<label class='col-sm-4 col-form-label'>Telepon</label>        		
 										<div class='col-sm-6'>
 											<input type=text name='tlp_supplier' id='tlp_supplier' class='form-control' value='$re[tlp_supplier]' autocomplete='off'>
 										</div>
 										
-									<label class='col-sm-4 control-label'>Alamat</label>        		
+									<label class='col-sm-4 col-form-label'>Alamat</label>        		
 										<div class='col-sm-6'>
 											<textarea name='alamat_supplier' id='alamat_supplier' class='form-control' rows='2'>$re[alamat_trbmasuk]</textarea>
 										</div>
 										
-									<label class='col-sm-4 control-label'>No Faktur</label>        		
+									<label class='col-sm-4 col-form-label'>No Faktur</label>        		
 										<div class='col-sm-6'>
 											<textarea name='ket_trbmasuk' id='ket_trbmasuk' class='form-control' rows='2'>$re[ket_trbmasuk]</textarea>
 											</p>
@@ -577,31 +577,31 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 
 ?>
 
-        <div class="box box-primary box-solid">
-            <div class='box-header with-border'>
-				<h3 class='box-title'>SEACRH BY No. Batch</h3>
-				<div class='box-tools pull-right'>
+        <div class="card">
+            <div class='card-header'>
+				<h3 class='card-title'>SEACRH BY No. Batch</h3>
+				<div class='float-end'>
 					<button class='btn btn-box-tool' data-widget='collapse'><i class='fa fa-minus'></i></button>
                 </div><!-- /.box-tools -->
 			</div>
 			<div class='box-body'>
 			    <form method="post" action="?module=trbmasuk&act=carinobatch">
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label for="staticEmail" class="col-sm-2 col-form-label">No. Batch</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="no_batch" name="no_batch">
                         </div>
                     </div>
-                    <div class="form-group row justify-contend-end">
+                    <div class="row mb-3 justify-contend-end">
                         <label for="inputPassword" class="col-sm-2 col-form-label">&nbsp;</label>
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary">
-                                <span class="glyphicon glyphicon-search"></span>
+                                <i class="fa fa-search"></i>
                                 Search
                             </button>
                             
                             <button class='btn btn-primary' type='button' onclick=self.history.back()>
-                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <i class="fa fa-chevron-left"></i>
                                 Kembali
                             </button>
                             
@@ -623,15 +623,15 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 			$row = $caridetail->fetch(PDO::FETCH_ASSOC);
 ?>
 
-        <div class="box box-primary box-solid">
-            <div class='box-header with-border'>
-				<h3 class='box-title'>SEACRH BY No. Batch</h3>
-				<div class='box-tools pull-right'>
+        <div class="card">
+            <div class='card-header'>
+				<h3 class='card-title'>SEACRH BY No. Batch</h3>
+				<div class='float-end'>
 					<button class='btn btn-box-tool' data-widget='collapse'><i class='fa fa-minus'></i></button>
                 </div><!-- /.box-tools -->
 			</div>
 			<div class='box-body table-responsive'>
-			    <div class="form-group row">
+			    <div class="row mb-3">
                     <label for="staticEmail" class="col-sm-2 col-form-label">Nama Barang</label>
                     <label for="staticEmail" class="col-sm-10 col-form-label">: <?=$row['nmbrg_dtrbmasuk']?></label>
                     
@@ -643,7 +643,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
                 </div>
 			    
 			    <button class='btn btn-primary' type='button' onclick=self.history.back()>
-                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <i class="fa fa-chevron-left"></i>
                     Kembali
                 </button>
                 <hr>

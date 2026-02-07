@@ -52,7 +52,7 @@ if ($_GET['module'] == 'home') {
     <div class="card-body">
         <h1>SISTEM INVENTORY FOR APOTEK</h1>
         <div class="row">
-            <div class="callout callout-info" style="margin:20px 20px 20px 20px">
+            <div class="alert alert-info" style="margin:20px 20px 20px 20px">
                 <h4><?php echo "Hai $_SESSION[namalengkap]"; ?></h4>
                 <p><?php echo "Selamat datang di halaman SMART INVENTORY FOR APOTEK "; ?>
                     <BR>
@@ -63,7 +63,7 @@ if ($_GET['module'] == 'home') {
     </div>
 
     <?php
-    echo "<p align=right>Login : $hari_ini, $tgl_awal <br>
+    echo "<p class='text-end'>Login : $hari_ini, $tgl_awal <br>
    <b><span id=\"jam\" style=\"font-size:24\"></span></b></p>
   <span id='date'></span>, <span id='clock'></span></p>
   </div>

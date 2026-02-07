@@ -317,11 +317,13 @@ if ($_SESSION['login'] == 0) {
             <div class="page-header">
                 <div class="page-header-left d-flex align-items-center">
                     <div class="page-header-title">
-                        <h5 class="m-b-10">Dashboard</h5>
+                        <h5 class="mb-2">Dashboard</h5>
                     </div>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="?module=<?=$_GET['module']?>"><?=ucwords($_GET['module'])?></a></li>
-                    </ul>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="?module=<?=$_GET['module']?>"><?=ucwords($_GET['module'])?></a></li>
+                        </ol>
+                    </nav>
                 </div>
                 
             </div>
