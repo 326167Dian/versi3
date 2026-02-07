@@ -47,6 +47,7 @@ if ($_SESSION['login'] == 0) {
     <!--! END: Vendors CSS-->
     <!--! BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bs3-compat.css" />
     <!--! END: Custom CSS-->
     <!--! HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries !-->
     <!--! WARNING: Respond.js doesn"t work if you view the page via file: !-->
@@ -382,6 +383,7 @@ if ($_SESSION['login'] == 0) {
     <script src="assets/vendors/js/jquery.min.js"></script>
     <script src="assets/vendors/js/dataTables.min.js"></script>
     <script src="assets/vendors/js/dataTables.bs5.min.js"></script>
+    <script src="assets/js/bs3-compat.js"></script>
     <script>
     	$(function() {
     		$("#example1").DataTable();

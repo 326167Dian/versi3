@@ -105,7 +105,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
                         <div style="text-align:center;">
                             <?php if ($_SESSION['level'] == 'pemilik' or $_SESSION['level'] == 'petugas'): ?>
 
-                                <button class='btn  btn-success btn-flat' type='submit' onclick="return confirm('Apakah Faktur yang dipilih sudah LUNAS?')" id="hapus">SUBMIT PELUNASAN</button>
+                                <button class='btn  btn-success btn-flat' type='submit' data-confirm="Apakah Faktur yang dipilih sudah LUNAS?" id="hapus">SUBMIT PELUNASAN</button>
 
                             <?php endif; ?>
                         </div>
@@ -1155,7 +1155,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>No</th>
+                                    <th><input type="checkbox" id="check-all"> No</th>
                                     <th>tanggal Jatuh Tempo</th>
                                     <th>Kode Transaksi</th>
                                     <th>No Faktur</th>
@@ -1204,7 +1204,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
                                 <div style="text-align:center;">
                                     <?php if ($_SESSION['level'] == 'pemilik'): ?>
 
-                                        <button class='btn  btn-success btn-flat' type='submit' onclick="return confirm('Apakah Faktur yang dipilih sudah LUNAS?')" id="hapus">SUBMIT PELUNASAN</button>
+                                        <button class='btn  btn-success btn-flat' type='submit' data-confirm="Apakah Faktur yang dipilih sudah LUNAS?" id="hapus">SUBMIT PELUNASAN</button>
 
                                     <?php endif; ?>
                                 </div>
