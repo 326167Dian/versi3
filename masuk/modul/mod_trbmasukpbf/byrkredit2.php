@@ -29,7 +29,7 @@ switch($_GET[act]){
                     </div><!-- /.box-tools -->
 				</div>
 				<div class="box-body">
-					<a  class ='btn  btn-success btn-flat' href='?module=trbmasuk&act=tambah'>TAMBAH</a><div></div><p><p>
+					<a class='btn btn-success' style="min-width: 100px;" href='?module=trbmasuk&act=tambah'>TAMBAH</a><div></div><p><p>
 					<a  class ='btn  btn-warning  btn-flat' href='#'></a>
 					<small>* Pembayaran belum lunas</small>
 					<br><br>
