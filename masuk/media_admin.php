@@ -48,6 +48,7 @@ if ($_SESSION['login'] == 0) {
     <!--! BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/theme.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/bs3-compat.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/custom-toast.css" />
     <!--! END: Custom CSS-->
     <!--! HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries !-->
     <!--! WARNING: Respond.js doesn"t work if you view the page via file: !-->

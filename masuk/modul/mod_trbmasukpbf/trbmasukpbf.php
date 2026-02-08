@@ -105,7 +105,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
                         <div style="text-align:center;">
                             <?php if ($_SESSION['level'] == 'pemilik' or $_SESSION['level'] == 'petugas'): ?>
 
-                                <button class='btn  btn-success btn-flat' type='submit' data-confirm="Apakah Faktur yang dipilih sudah LUNAS?" id="hapus">SUBMIT PELUNASAN</button>
+                                <button class='btn btn-success' style="min-width: 150px;" type='submit' data-confirm="Apakah Faktur yang dipilih sudah LUNAS?" id="hapus">SUBMIT PELUNASAN</button>
 
                             <?php endif; ?>
                         </div>
@@ -1204,7 +1204,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
                                 <div style="text-align:center;">
                                     <?php if ($_SESSION['level'] == 'pemilik'): ?>
 
-                                        <button class='btn  btn-success btn-flat' type='submit' data-confirm="Apakah Faktur yang dipilih sudah LUNAS?" id="hapus">SUBMIT PELUNASAN</button>
+                                        <button class='btn btn-success' style="min-width: 150px;" type='submit' data-confirm="Apakah Faktur yang dipilih sudah LUNAS?" id="hapus">SUBMIT PELUNASAN</button>
 
                                     <?php endif; ?>
                                 </div>
@@ -2613,7 +2613,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
                         'stt_aksi'          : stt_aksi
                     },
                     success: function(data) {
-                        //alert('Tambah data detail berhasil');
+                        showToast('Tambah data detail berhasil', 'success');
                         document.getElementById("id_barang").value = "";
                         document.getElementById("kd_barang").value = "";
                         document.getElementById("nmbrg_dtrbmasuk").value = "";
@@ -2650,7 +2650,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 
                 success: function() {
                     //setelah simpan data, tabel_detail data terbaru
-                    //alert('Hapus data detail berhasil');
+                    showToast('Hapus data detail berhasil', 'warning');
                     tabel_detail();
                     //hilangkan modal
                     $(".close").click();
@@ -2672,7 +2672,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
     
                 success: function (data) {
                     //setelah simpan data, tabel_detail data terbaru
-                    //alert('Hapus data detail berhasil');
+                    showToast('Hapus data detail berhasil', 'warning');
                     tabel_detail1();
                     //hilangkan modal
                     // $(".close").click();

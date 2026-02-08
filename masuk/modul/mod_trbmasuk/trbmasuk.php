@@ -26,7 +26,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 					</div><!-- /.box-tools -->
 				</div>
 				<div class="box-body table-responsive">
-					<a class='btn  btn-success btn-flat' href='?module=trbmasuk&act=tambah'>TAMBAH</a>
+					<a class='btn btn-success' style="min-width: 100px;" href='?module=trbmasuk&act=tambah'>TAMBAH</a>
 					<a class='btn  btn-info btn-flat' href='?module=trbmasuk&act=cari'>CARI NOMOR BATCH</a>
 					<div></div>
 					<p>
@@ -1072,7 +1072,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 					'exp_date': exp_date
 				},
 				success: function(data) {
-					//alert('Tambah data detail berhasil');
+					showToast('Tambah data detail berhasil', 'success');
 					document.getElementById("id_barang").value = "";
 					document.getElementById("kd_barang").value = "";
 					document.getElementById("nmbrg_dtrbmasuk").value = "";
@@ -1107,7 +1107,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 			},
 			success: function(data) {
 				//setelah simpan data, tabel_detail data terbaru
-				//alert('Hapus data detail berhasil');
+				showToast('Hapus data detail berhasil', 'warning');
 				tabel_detail();
 				//hilangkan modal
 				$(".close").click();

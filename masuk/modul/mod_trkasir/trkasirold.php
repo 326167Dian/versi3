@@ -31,7 +31,7 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 					</div><!-- /.box-tools -->
 				</div>
 				<div class="box-body table-responsive">
-					<a class='btn  btn-success btn-flat' href='?module=trkasir&act=tambah'>TAMBAH</a>
+					<a class='btn btn-success' style="max-width: 20px;" href='?module=trkasir&act=tambah'>TAMBAH</a>
 					<td><a class='btn btn-danger btn-flat' href='modul/mod_trkasir/barangmacet.php' target='_blank'>DOWNLOAD STOK MACET</a></td>
                     <?php
                     $cari = $_SESSION['level'];

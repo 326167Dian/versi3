@@ -80,8 +80,7 @@ switch($_GET[act]){
 											<td align=right>$sisa_bayar</td>											 
 											<td align=center>$r[carabayar]</td>											 
 											 <td><a href='?module=byrkredit&act=ubah&id=$r[id_trbmasuk]' title='EDIT' class='btn btn-warning btn-xs'>EDIT</a> 
-											 <a href=javascript:confirmdelete('$aksi?module=trbmasuk&act=hapus&id=$r[id_trbmasuk]') title='HAPUS' class='btn btn-danger btn-xs'>HAPUS</a>
-											 
+											 <a href='$aksi?module=trbmasuk&act=hapus&id=$r[id_trbmasuk]&module2=$_GET[module]' data-confirm='Anda yakin ingin menghapus?' title='HAPUS' class='btn btn-danger btn-xs'>HAPUS</a>
 											</td>
 										</tr>";
 								$no++;
