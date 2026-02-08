@@ -61,6 +61,9 @@ if ($_SESSION['login'] == 0) {
 	<link rel="stylesheet" href="assets/vendors/css/fontawesome.min.css" />
 	<!--DataTable-->
 	<link rel="stylesheet" href="assets/vendors/css/dataTables.bs5.min.css">
+	
+	<!--! Load jQuery early so modules can use it !-->
+	<script src="assets/vendors/js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -375,39 +378,42 @@ if ($_SESSION['login'] == 0) {
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
     <script src="assets/js/common-init.min.js"></script>
+    <?php if (empty($_GET['module']) || $_GET['module'] == 'home') { ?>
     <script src="assets/js/dashboard-init.min.js"></script>
+    <?php } ?>
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
     <script src="assets/js/theme-customizer-init.min.js"></script>
     <!--! END: Theme Customizer !-->
     
-    <script src="assets/vendors/js/jquery.min.js"></script>
     <script src="assets/vendors/js/dataTables.min.js"></script>
     <script src="assets/vendors/js/dataTables.bs5.min.js"></script>
     <script src="assets/js/bs3-compat.js"></script>
     <script>
     	$(function() {
-    		$("#example1").DataTable();
-    		$("#example3").DataTable();
-    		$("#example4").DataTable();
-    		$('#example2').DataTable({
-    			"paging": true,
-    			"lengthChange": true,
-    			"searching": true,
-    			"ordering": true,
-    			"info": true,
-    			"autoWidth": true
-    		});
+    		if($("#example1").length) $("#example1").DataTable();
+    		if($("#example3").length) $("#example3").DataTable();
+    		if($("#example4").length) $("#example4").DataTable();
+    		if($('#example2').length) {
+    			$('#example2').DataTable({
+    				"paging": true,
+    				"lengthChange": true,
+    				"searching": true,
+    				"ordering": true,
+    				"info": true,
+    				"autoWidth": true
+    			});
+    		}
     	});
-    
+
     	function formatRupiah(num) {
     		let rupiahFormat = new Intl.NumberFormat('id-ID', {
     			currency: 'IDR',
     		}).format(num);
-    
+
     		return rupiahFormat;
     	}
-    
+
     </script>
 </body>
 

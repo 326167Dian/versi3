@@ -80,11 +80,11 @@ if ($_GET['action'] == "table_data") {
     }
 
     $data = array();
-    $nomorbatch="";
     $datenow = date('Y-m-d', time());
     if (!empty($query)) {
         $no = $start + 1;
         while ($value = $query->fetch(PDO::FETCH_ASSOC)) {
+            $nomorbatch = "";
             $batch = $db->query("SELECT * FROM batch WHERE kd_barang = '$value[kd_barang]' AND exp_date > '$datenow' AND status = 'masuk'");
             while($bt = $batch->fetch(PDO::FETCH_ASSOC)){
                 $nomorbatch .= $bt['no_batch']."<br>";

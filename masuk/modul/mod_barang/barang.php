@@ -556,21 +556,45 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 }
 ?>
 
-<script type="text/javascript" src="vendors/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
-	var editor = CKEDITOR.replace("content", {
-		filebrowserBrowseUrl: '',
-		filebrowserWindowWidth: 1000,
-		filebrowserWindowHeight: 500
-	});
+	// CKEditor initialization - only if CKEditor is loaded
+	if (typeof CKEDITOR !== 'undefined') {
+		var editor = CKEDITOR.replace("content", {
+			filebrowserBrowseUrl: '',
+			filebrowserWindowWidth: 1000,
+			filebrowserWindowHeight: 500
+		});
+	}
 </script>
+<style>
+	/* Compact table style untuk barang */
+	#tes {
+		font-size: 0.9rem;
+	}
+	#tes thead th {
+		padding: 0.5rem 0.25rem;
+		vertical-align: middle;
+	}
+	#tes tbody td {
+		padding: 0.4rem 0.25rem;
+		vertical-align: middle;
+	}
+	#tes tbody tr {
+		height: auto;
+	}
+</style>
 <script>
-	$(document).ready(function() {
+	// Defer DataTable initialization until jQuery is ready
+	function initBarangTable() {
+		if (typeof $ === 'undefined') {
+			setTimeout(initBarangTable, 100);
+			return;
+		}
 		$('#tes').DataTable({
 			processing: true,
 			serverSide: true,
 			ajax: {
-				"url": "modul/mod_barang/barang-serverside.php?action=table_data",
+				"url": "/mysifa3/masuk/modul/mod_barang/barang-serverside.php?action=table_data",
 				"dataType": "JSON",
 				"type": "POST"
 			},
@@ -622,21 +646,21 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 				},
 				{
 					"data": "hrgsat_barang",
-					"className": 'text-right',
+					"className": 'text-end',
 					"render": function(data, type, row) {
 						return formatRupiah(data);
 					}
 				},
 				{
 					"data": "hrgjual_barang",
-					"className": 'text-left',
+					"className": 'text-start',
 				// 	"render": function(data, type, row) {
 				// 		return formatRupiah(data);
 				// 	}
 				},
 				{
 					"data": "indikasi",
-					"className": 'text-justify'
+					"className": 'text-wrap'
 				},
 				{
 					"data": "aksi",
@@ -651,5 +675,12 @@ if (empty($_SESSION['username']) and empty($_SESSION['passuser'])) {
 				},
 			]
 		});
-	});
+	}
+	
+	// Try to initialize immediately, or defer if jQuery not ready
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initBarangTable);
+	} else {
+		setTimeout(initBarangTable, 100);
+	}
 </script>
